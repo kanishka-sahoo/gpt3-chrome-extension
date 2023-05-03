@@ -1,5 +1,5 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "GPT-3 Questions",
   "version": "1.0",
   "description": "A Chrome extension that uses GPT-3 to answer questions",
@@ -10,12 +10,13 @@
     "48": "assets/icon48.png",
     "128": "assets/icon128.png"
   },
+  "host_permissions": [
+    "https://api.openai.com/*"
+  ],
   "permissions": [
-    "https://api.openai.com/*",
-    "activeTab",
     "storage"
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "popup.html"
   }
 }

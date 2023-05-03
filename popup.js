@@ -3,17 +3,31 @@ const questionInput = document.getElementById('question');
 const answerDiv = document.getElementById('answer');
 const loaderDiv = document.getElementById('loader');
 let notificationTimeout = null;
+let apiTokenInput = null;
+
+chrome.storage.sync.get(['apiToken'], (result) => {
+  if (result.apiToken) {
+    apiTokenInput = result.apiToken;
+  }
+  else {
+    chrome.runtime.openOptionsPage();
+  }
+});
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
   const question = questionInput.value;
   answerDiv.textContent = '';
   loaderDiv.style.display = 'block';
+  const apiToken = apiTokenInput;
+  // Store the API token in storage
+  chrome.storage.sync.set({ apiToken: apiToken });
+
   const response = await fetch('https://api.openai.com/v1/completions', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer API-TOKEN-HERE'
+      'Authorization': 'Bearer '+apiToken
     },
     body: JSON.stringify({
       model: "text-davinci-003",

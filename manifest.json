@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "GPT-3 Questions",
+  "name": "GPT-3.5 Questions",
   "version": "1.0.1",
-  "description": "A Chrome extension that uses GPT-3 to answer questions",
+  "description": "A Chrome extension that uses GPT-3.5 to answer questions",
   "options_page": "options.html",
   "icons": {
     "16": "assets/icon16.png",

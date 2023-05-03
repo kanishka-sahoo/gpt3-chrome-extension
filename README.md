@@ -10,13 +10,11 @@ This is an extension that helps you to access the power of GPT3 directly from yo
 
 3. Clone this repository or download as ZIP. If you downloaded as ZIP, unzip the package.
 
-4. Open the directory.
+4. Visit your browser's extensions page and enable developer mode.
 
-5. Edit the `popup.js` file to replace the API-TOKEN-HERE with your OpenAI API token.
+5. Click on `Load Unpacked` or similar, and navigate to the extension directory, and select it.
 
-6. Visit your browser's extensions page and enable developer mode.
-
-7. Click on `Load Unpacked` or similar, and navigate to the extension directory, and select it.
+6. Paste the token into the options page on first launch, and submit it.
 
 Now it is ready for use.
 

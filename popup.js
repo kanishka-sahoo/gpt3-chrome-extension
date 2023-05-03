@@ -39,10 +39,9 @@ form.addEventListener('submit', async (event) => {
     });
     const data = await response.json();
     const answer = data.choices[0].text;
+    answerDiv.textContent = answer;
+    loaderDiv.style.display = 'none';
   } catch (error) {
     console.error(error);
   }
-  answerDiv.textContent = answer;
-  loaderDiv.style.display = 'none';
-  clearTimeout(notificationTimeout); 
 });

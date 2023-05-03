@@ -4,7 +4,7 @@ This is an extension that helps you to access the power of GPT3 directly from yo
 
 # Installation:
 
-1. Create an account over at beta.openai.com
+1. Create an account over at https://beta.openai.com
 
 2. Visit https://platform.openai.com/account/api-keys and create a new API key.
 

@@ -25,6 +25,15 @@
         width: 100%;
         box-sizing: border-box;
       }
+      input[type="number"] {
+        margin-bottom: 20px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        width: 100%;
+        box-sizing: border-box;
+      }
       button[type="submit"] {
         padding: 10px;
         background-color: #0077ff;
@@ -53,7 +62,11 @@
     <form id="api-token-form">
       <label for="api-token">API Token:</label>
       <input type="text" id="api-token" name="api-token" required>
-      <br><br>
+      <br>
+      <p>Enter the maximum token length:</p>
+      <input type="number" id="maxTokensInput" placeholder="Max tokens" value="50">
+      <p>Enter the temperature:</p>
+      <input type="number" id="temperatureInput" step=0.1 placeholder="Temperature" value="0.5">
       <button type="submit">Save</button>
     </form>
     <script src="options.js"></script>

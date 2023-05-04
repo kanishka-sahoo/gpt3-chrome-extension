@@ -4,6 +4,8 @@ const answerDiv = document.getElementById('answer');
 const loaderDiv = document.getElementById('loader');
 let notificationTimeout = null;
 let apiTokenInput = null;
+let temperature = null;
+let maxTokens = null;
 
 chrome.storage.sync.get(['apiToken'], (result) => {
   if (result.apiToken) {
@@ -13,6 +15,25 @@ chrome.storage.sync.get(['apiToken'], (result) => {
     chrome.runtime.openOptionsPage();
   }
 });
+
+chrome.storage.sync.get(['maxTokens'], (result) => {
+  if (result.maxTokens) {
+    maxTokens = result.maxTokenss;
+  }
+  else {
+    chrome.runtime.openOptionsPage();
+  }
+});
+
+chrome.storage.sync.get(['temperature'], (result) => {
+  if (result.temperature) {
+    temperature = result.temperature;
+  }
+  else {
+    chrome.runtime.openOptionsPage();
+  }
+});
+
 
 form.addEventListener('submit', async (event) => {
   event.preventDefault();
@@ -32,8 +53,8 @@ form.addEventListener('submit', async (event) => {
       body: JSON.stringify({
         model: "text-davinci-003",
         prompt: `Question: ${question}\nAnswer:`,
-        max_tokens: 1000,
-        temperature: 0.7,
+        max_tokens: Number(maxTokens),
+        temperature: Number(temperature),
         n: 1
       })
     });

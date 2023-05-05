@@ -18,7 +18,7 @@ chrome.storage.sync.get(['apiToken'], (result) => {
 
 chrome.storage.sync.get(['maxTokens'], (result) => {
   if (result.maxTokens) {
-    maxTokens = result.maxTokenss;
+    maxTokens = result.maxTokens;
   }
   else {
     chrome.runtime.openOptionsPage();
@@ -41,6 +41,7 @@ form.addEventListener('submit', async (event) => {
   answerDiv.textContent = '';
   loaderDiv.style.display = 'block';
   const apiToken = apiTokenInput;
+  alert(maxTokens);
   // Store the API token in storage
   chrome.storage.sync.set({ apiToken: apiToken });
   try {

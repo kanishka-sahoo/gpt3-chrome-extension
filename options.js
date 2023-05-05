@@ -31,6 +31,8 @@ document.getElementById('api-token-form').addEventListener('submit', (event) => 
   chrome.storage.sync.set({ apiToken: apiToken });
   chrome.storage.sync.set({ maxTokens: maxTokens });
   chrome.storage.sync.set({ temperature: temperature });
+  alert(maxTokens);
+  alert(temperature);
   // Close the options page
   window.close();
 });
